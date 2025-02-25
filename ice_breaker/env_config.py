@@ -1,5 +1,6 @@
 from decouple import config
 
+
 class EnvConfig:
     OPENAI_API_KEY: str = config("OPENAI_API_KEY")
     PROXYCURL_API_KEY = config("PROXYCURL_API_KEY")
@@ -11,7 +12,9 @@ class EnvConfig:
     TWITTER_ACCESS_TOKEN_SECRET = config("TWITTER_ACCESS_TOKEN_SECRET")
     PYTHONPATH = config("PYTHONPATH")
     LANGCHAIN_API_KEY = config("LANGCHAIN_API_KEY")
-    LANGCHAIN_TRACING_V2: bool = True if config("LANGCHAIN_TRACING_V2") == "true" else False
+    LANGCHAIN_TRACING_V2: bool = (
+        True if config("LANGCHAIN_TRACING_V2") == "true" else False
+    )
     LANGCHAIN_PROJECT = config("LANGCHAIN_PROJECT")
     AZURE_API_VERSION = config("AZURE_API_VERSION")
     AZURE_OPENAI_ENDPOINT = config("AZURE_OPENAI_ENDPOINT")
